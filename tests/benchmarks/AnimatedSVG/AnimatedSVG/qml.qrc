@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Resources/Images/1.svg</file>
+        <file>Resources/Images/2.svg</file>
+        <file>Resources/Images/3.svg</file>
+        <file>Resources/Images/4.svg</file>
+        <file>Resources/Images/5.svg</file>
+        <file>Resources/Images/6.svg</file>
+        <file>Resources/Images/7.svg</file>
+        <file>Resources/Images/8.svg</file>
+        <file>Resources/Images/00004123.svg</file>
+        <file>Resources/Images/Animated frames.svg</file>
+        <file>Resources/Images/animMotion01.svg</file>
+        <file>Resources/Images/audio.svg</file>
+        <file>Resources/Images/ball-triangle.svg</file>
+        <file>Resources/Images/bars.svg</file>
+        <file>Resources/Images/beer.svg</file>
+        <file>Resources/Images/circles.svg</file>
+        <file>Resources/Images/grid.svg</file>
+        <file>Resources/Images/hearts.svg</file>
+        <file>Resources/Images/im-loading-animation.svg</file>
+        <file>Resources/Images/im-progress-percentage.svg</file>
+        <file>Resources/Images/moving-bars.svg</file>
+        <file>Resources/Images/opening.svg</file>
+        <file>Resources/Images/oval.svg</file>
+        <file>Resources/Images/puff.svg</file>
+        <file>Resources/Images/rings.svg</file>
+        <file>Resources/Images/spinning-circles.svg</file>
+        <file>Resources/Images/tail-spin.svg</file>
+        <file>Resources/Images/three-dots.svg</file>
+    </qresource>
+</RCC>
