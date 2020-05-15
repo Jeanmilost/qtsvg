@@ -68,99 +68,12 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\00004123.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\1.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\2.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\3.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\4.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\5.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\6.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\7.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\8.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\Animated">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\animMotion01.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\audio.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\ball-triangle.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\bars.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\beer.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\circles.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="frames.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\grid.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\hearts.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\im-loading-animation.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\im-progress-percentage.svg">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="main.qml">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\moving-bars.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\opening.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\oval.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\puff.svg">
       <Filter>Resource Files</Filter>
     </None>
     <QtRcc Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <None Include="Resources\Images\rings.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\spinning-circles.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\tail-spin.svg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Resources\Images\three-dots.svg">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="main.qml" />
   </ItemGroup>
   <ItemGroup>

@@ -29,5 +29,8 @@
         <file>Resources/Images/spinning-circles.svg</file>
         <file>Resources/Images/tail-spin.svg</file>
         <file>Resources/Images/three-dots.svg</file>
+        <file>Resources/Images/Anim_Simple_Circle.svg</file>
+        <file>Resources/Images/animated_graphs.svg</file>
+        <file>Resources/Images/Running_Man.svg</file>
     </qresource>
 </RCC>

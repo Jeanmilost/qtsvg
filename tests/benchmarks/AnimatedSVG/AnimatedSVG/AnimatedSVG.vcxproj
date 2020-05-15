@@ -217,41 +217,8 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\00004123.svg" />
-    <None Include="Resources\Images\1.svg" />
-    <None Include="Resources\Images\2.svg" />
-    <None Include="Resources\Images\3.svg" />
-    <None Include="Resources\Images\4.svg" />
-    <None Include="Resources\Images\5.svg" />
-    <None Include="Resources\Images\6.svg" />
-    <None Include="Resources\Images\7.svg" />
-    <None Include="Resources\Images\8.svg" />
-    <None Include="Resources\Images\Animated" />
-    <None Include="Resources\Images\animMotion01.svg" />
-    <None Include="Resources\Images\audio.svg" />
-    <None Include="Resources\Images\ball-triangle.svg" />
-    <None Include="Resources\Images\bars.svg" />
-    <None Include="Resources\Images\beer.svg" />
-    <None Include="Resources\Images\circles.svg" />
-    <None Include="frames.svg" />
-    <None Include="Resources\Images\grid.svg" />
-    <None Include="Resources\Images\hearts.svg" />
-    <None Include="Resources\Images\im-loading-animation.svg" />
-    <None Include="Resources\Images\im-progress-percentage.svg" />
-    <None Include="main.qml" />
-    <None Include="Resources\Images\moving-bars.svg" />
-    <None Include="Resources\Images\opening.svg" />
-    <None Include="Resources\Images\oval.svg" />
-    <None Include="Resources\Images\puff.svg" />
     <QtRcc Include="qml.qrc">
     </QtRcc>
-    <None Include="Resources\Images\rings.svg" />
-    <None Include="Resources\Images\spinning-circles.svg" />
-    <None Include="Resources\Images\tail-spin.svg" />
-    <None Include="Resources\Images\three-dots.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="main.qml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
