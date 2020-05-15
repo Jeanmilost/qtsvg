@@ -693,69 +693,74 @@ void QSvgAnimateTransform::resolveMatrix(const QSvgNode *node)
         percentOfAnimation -= ((int)percentOfAnimation);
     }
 
-    qreal currentPosition = percentOfAnimation * (m_count - 1);
-    int endElem   = qCeil(currentPosition);
-    int startElem = qMax(endElem - 1, 0);
+    qreal currentPosition;
+    int   startElem;
+    int   endElem;
+
+    // calculate the global index pointing to the group of values to get from
+    const std::size_t argCount = m_args.size();
+    const std::size_t index    = std::size_t(percentOfAnimation * qreal(m_count - 1));
+
+    // calculate the animation current position
+    const qreal timePerFrame = 1.0 / qreal(m_count - 1);
+    const qreal frameStart   = timePerFrame * qreal(index);
+    currentPosition          = (percentOfAnimation - frameStart) / timePerFrame;
+
+    // calculate the start and end indices in each group of values,
+    // and certify that each indice cannot be out of bounds
+    startElem = (index     * 3) % argCount;
+    endElem   = (startElem + 3) % argCount;
 
     switch(m_type)
     {
     case Translate: {
-        startElem *= 3;
-        endElem   *= 3;
-        qreal from1, from2;
-        qreal to1, to2;
-        from1 = m_args[startElem++];
-        from2 = m_args[startElem++];
-        to1   = m_args[endElem++];
-        to2   = m_args[endElem++];
+        const qreal from1 = m_args[startElem++];
+        const qreal from2 = m_args[startElem++];
+        const qreal to1   = m_args[endElem++];
+        const qreal to2   = m_args[endElem++];
 
-        qreal transXDiff = (to1-from1) * percentOfAnimation;
-        qreal transX = from1 + transXDiff;
-        qreal transYDiff = (to2-from2) * percentOfAnimation;
-        qreal transY = from2 + transYDiff;
+        const qreal transXDiff = (to1 - from1) * currentPosition;
+        const qreal transX     = from1 + transXDiff;
+        const qreal transYDiff = (to2 - from2) * currentPosition;
+        const qreal transY     = from2 + transYDiff;
+
         m_transform = QTransform();
         m_transform.translate(transX, transY);
         break;
     }
     case Scale: {
-        startElem *= 3;
-        endElem   *= 3;
-        qreal from1, from2;
-        qreal to1, to2;
-        from1 = m_args[startElem++];
-        from2 = m_args[startElem++];
-        to1   = m_args[endElem++];
-        to2   = m_args[endElem++];
+        const qreal from1 = m_args[startElem++];
+        const qreal from2 = m_args[startElem++];
+        const qreal to1   = m_args[endElem++];
+        const qreal to2   = m_args[endElem++];
 
-        qreal transXDiff = (to1-from1) * percentOfAnimation;
-        qreal transX = from1 + transXDiff;
-        qreal transYDiff = (to2-from2) * percentOfAnimation;
-        qreal transY = from2 + transYDiff;
+        const qreal transXDiff = (to1 - from1) * currentPosition;
+        const qreal transX     = from1 + transXDiff;
+        const qreal transYDiff = (to2 - from2) * currentPosition;
+              qreal transY     = from2 + transYDiff;
+
         if (transY == 0)
             transY = transX;
+
         m_transform = QTransform();
         m_transform.scale(transX, transY);
         break;
     }
     case Rotate: {
-        startElem *= 3;
-        endElem   *= 3;
-        qreal from1, from2, from3;
-        qreal to1, to2, to3;
-        from1 = m_args[startElem++];
-        from2 = m_args[startElem++];
-        from3 = m_args[startElem++];
-        to1   = m_args[endElem++];
-        to2   = m_args[endElem++];
-        to3   = m_args[endElem++];
+        const qreal from1 = m_args[startElem++];
+        const qreal from2 = m_args[startElem++];
+        const qreal from3 = m_args[startElem++];
+        const qreal to1   = m_args[endElem++];
+        const qreal to2   = m_args[endElem++];
+        const qreal to3   = m_args[endElem++];
 
-        qreal rotationDiff = (to1 - from1) * percentOfAnimation;
-        //qreal rotation = from1 + rotationDiff;
+        const qreal rotationDiff = (to1 - from1) * currentPosition;
+        //qreal rotation           = from1 + rotationDiff;
+        const qreal transXDiff   = (to2 - from2) * currentPosition;
+        const qreal transX       = from2 + transXDiff;
+        const qreal transYDiff   = (to3 - from3) * currentPosition;
+        const qreal transY       = from3 + transYDiff;
 
-        qreal transXDiff = (to2-from2) * percentOfAnimation;
-        qreal transX = from2 + transXDiff;
-        qreal transYDiff = (to3-from3) * percentOfAnimation;
-        qreal transY = from3 + transYDiff;
         m_transform = QTransform();
         m_transform.translate(transX, transY);
         m_transform.rotate(rotationDiff);
@@ -763,30 +768,23 @@ void QSvgAnimateTransform::resolveMatrix(const QSvgNode *node)
         break;
     }
     case SkewX: {
-        startElem *= 3;
-        endElem   *= 3;
-        qreal from1;
-        qreal to1;
-        from1 = m_args[startElem++];
-        to1   = m_args[endElem++];
+        const qreal from1 = m_args[startElem++];
+        const qreal to1   = m_args[endElem++];
 
-        qreal transXDiff = (to1-from1) * percentOfAnimation;
-        qreal transX = from1 + transXDiff;
+        const qreal transXDiff = (to1 - from1) * currentPosition;
+        const qreal transX     = from1 + transXDiff;
+
         m_transform = QTransform();
         m_transform.shear(qTan(transX * deg2rad), 0);
         break;
     }
     case SkewY: {
-        startElem *= 3;
-        endElem   *= 3;
-        qreal from1;
-        qreal to1;
-        from1 = m_args[startElem++];
-        to1   = m_args[endElem++];
+        const qreal from1 = m_args[startElem++];
+        const qreal to1   = m_args[endElem++];
 
+        const qreal transYDiff = (to1 - from1) * currentPosition;
+        const qreal transY     = from1 + transYDiff;
 
-        qreal transYDiff = (to1 - from1) * percentOfAnimation;
-        qreal transY = from1 + transYDiff;
         m_transform = QTransform();
         m_transform.shear(0, qTan(transY * deg2rad));
         break;
